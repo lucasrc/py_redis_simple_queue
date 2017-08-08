@@ -1,4 +1,4 @@
-from abc import ABCMeta
+from abc import ABCMeta, abstractmethod
 
 
 class Worker(metaclass=ABCMeta):
@@ -8,11 +8,12 @@ class Worker(metaclass=ABCMeta):
         self.__queue = redis_queue
 
     def dequeue(self):
-        """ Enqueue messages and put into run """
+        """ Dequeue messages and put into run """
         while True:
             msg = self.__queue.get()
             self.run(msg)
 
+    @abstractmethod
     def run(self, msg):
         pass
 
