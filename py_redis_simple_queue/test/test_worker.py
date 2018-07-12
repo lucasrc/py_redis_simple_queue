@@ -1,4 +1,5 @@
-from unittest import TestCase, mock
+from unittest import TestCase
+from mock import mock
 from fakeredis import FakeRedis
 
 from py_redis_simple_queue.worker import Worker
@@ -24,7 +25,7 @@ class TestWorker(TestCase):
     def setUp(self):
         self.redis_mock = mock.patch(QUEUE_MODULE + 'redis').start()
         self.redis_mock.redis.return_value = FakeRedis()
-        self.queue = RedisQueue('test')
+        self.queue = RedisQueue('test', FakeRedis())
         self.queue.put('test')
         self.queue.put('test')
         self.queue.get = mock.Mock()

@@ -12,15 +12,23 @@ Very simple implementation from article : http://peter-hoffmann.com/2012/python-
 
 ### The sender
 ```python
+from redis import Redis
+
 from redis_simple_queue import RedisQueue
 
-queue = RedisQueue('my_queue')
+
+connection = Redis() # see docs at https://docs.objectrocket.com/redis_python_examples.html
+
+
+queue = RedisQueue('my_queue', connection)
 queue.put('my message')
 ```
 
 ### The worker
 
 ```python
+from redis import Redis
+
 from redis_simple_queue import Worker, RedisQueue
 
 class MyWorker(Worker):
@@ -29,7 +37,8 @@ class MyWorker(Worker):
         print(msg)
         # do something with message
 
-queue = RedisQueue('my_queue')
+connection = Redis()
+queue = RedisQueue('my_queue', connection)
 worker = MyWorker(queue)
 worker.dequeue()
 ```

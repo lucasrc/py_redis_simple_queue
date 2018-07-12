@@ -10,7 +10,7 @@ with open('requirements.txt', 'r') as rh:
 
 setuptools.setup(
     name="py_redis_simple_queue",
-    version="0.0.1",
+    version="0.0.2",
     author="Lucas Coutinho",
     author_email="lrclucas@gmail.com",
     description="A simple but useful redis queue/worker",
