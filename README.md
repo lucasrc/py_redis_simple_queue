@@ -27,7 +27,7 @@ class MyWorker(Worker):
 
     def run(self, msg):
         print(msg)
-        return msg
+        # do something with message
 
 queue = RedisQueue('my_queue')
 worker = MyWorker(queue)
