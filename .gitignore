@@ -1,2 +1,7 @@
 .idea
 *.pyc
+build
+dist
+setuptools
+py_redis_simple_queue.egg-info/
+redis_simple_queue.egg-info/

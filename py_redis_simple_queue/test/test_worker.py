@@ -1,10 +1,10 @@
 from unittest import TestCase, mock
 from fakeredis import FakeRedis
 
-from redis_simple_queue.worker import Worker
-from redis_simple_queue.queue import RedisQueue
+from py_redis_simple_queue.worker import Worker
+from py_redis_simple_queue.queue import RedisQueue
 
-QUEUE_MODULE = 'redis_simple_queue.queue.'
+QUEUE_MODULE = 'py_redis_simple_queue.queue.'
 
 
 class MyWorker(Worker):
