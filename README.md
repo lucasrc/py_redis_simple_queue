@@ -7,7 +7,7 @@ Very simple implementation from article : http://peter-hoffmann.com/2012/python-
 ## usage
 
 ```shell
-    pip install redis_simple_queue
+    pip install py_redis_simple_queue
 ```
 
 ### The sender
