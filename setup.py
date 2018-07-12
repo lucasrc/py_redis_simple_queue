@@ -4,9 +4,6 @@ import setuptools
 with open('README.md', 'r') as fh:
     long_description = fh.read()
 
-with open('requirements.txt', 'r') as rh:
-    requirements = rh.read()
-
 
 setuptools.setup(
     name="py_redis_simple_queue",
@@ -17,7 +14,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/lucasrc/py_redis_simple_queue",
-    install_requires=requirements.splitlines(),
+    install_requires=['redis==2.10.6'],
     packages=setuptools.find_packages(exclude=['build', 'dist', 'test*']),
     classifiers=[
         "Programming Language :: Python :: 2.7",
