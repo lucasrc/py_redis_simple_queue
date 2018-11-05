@@ -1,5 +1,4 @@
 from abc import ABCMeta, abstractmethod
-from redis import ConnectionError
 
 
 class Worker(object):
@@ -12,12 +11,8 @@ class Worker(object):
     def dequeue(self):
         """ Dequeue messages and put into run """
         while True:
-            try:
-                msg = self.__queue.get()
-                self.run(msg)
-            except ConnectionError:
-                print('exiting... connection error')
-                return
+            msg = self.__queue.get()
+            self.run(msg)
 
     @abstractmethod
     def run(self, msg):
