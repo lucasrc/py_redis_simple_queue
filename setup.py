@@ -14,7 +14,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/lucasrc/py_redis_simple_queue",
-    install_requires=['redis==2.10.6'],
+    install_requires=['redis==4.4.4'],
     packages=setuptools.find_packages(exclude=['build', 'dist', 'test*']),
     classifiers=[
         "Programming Language :: Python :: 2.7",
